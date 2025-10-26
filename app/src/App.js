@@ -26,6 +26,7 @@ function App() {
                 <a href="https://www.4chan.org/wg/">/wg/</a>
                 <a href="https://www.youtube.com">youtube</a>
                 <a href="https://www.netflix.com">netflix</a>
+                <a href="https://www.spotify.com">spotify</a>
               </div>
             </div>
 
