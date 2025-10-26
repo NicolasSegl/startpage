@@ -1,71 +1,4 @@
 import './App.css';
-import { useEffect, useRef, memo } from 'react';
-
-const TradingViewWidget = memo(() => {
-  const container = useRef();
-
-  useEffect(
-    () => {
-      const script = document.createElement("script");
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.innerHTML = `
-        {
-          "colorTheme": "dark",
-          "dateRange": "1D",
-          "locale": "en",
-          "largeChartUrl": "",
-          "isTransparent": false,
-          "showFloatingTooltip": false,
-          "plotLineColorGrowing": "rgba(5, 102, 86, 1)",
-          "plotLineColorFalling": "rgba(156, 39, 176, 1)",
-          "gridLineColor": "rgba(240, 243, 250, 0)",
-          "scaleFontColor": "#DBDBDB",
-          "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-          "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-          "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-          "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-          "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
-          "tabs": [
-            {
-              "title": "Indices",
-              "symbols": [
-                {
-                  "s": "TSX:VFV",
-                  "d": "VFV",
-                  "logoid": "vanguard",
-                  "currency-logoid": "country/CA"
-                },
-                {
-                  "s": "CFI:BTCCAD",
-                  "d": "BTC",
-                  "base-currency-logoid": "crypto/XTVCBTC",
-                  "currency-logoid": "country/CA"
-                }
-              ],
-              "originalTitle": "Indices"
-            }
-          ],
-          "support_host": "https://www.tradingview.com",
-          "backgroundColor": "#0f0f0f",
-          "width": "400",
-          "height": "550",
-          "showSymbolLogo": true,
-          "showChart": true
-        }`;
-      container.current.appendChild(script);
-    },
-    []
-  );
-
-  return (
-    <div className="tradingview-widget-container" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span className="blue-text">Market summary</span></a><span className="trademark"> by TradingView</span></div>
-    </div>
-  );
-});
 
 function App() {
   return (
@@ -76,14 +9,51 @@ function App() {
             display: 'flex',
           }}
         >
-          <img src="flowers.jfif" height="600" />
+          <img src="flowers.jfif" height="500" />
           <div
             style={{
               display: 'flex',
+              flexDirection: 'column',
+              width: '100%',
+              alignItems: 'center',
+              justifyContent: 'space-around'
             }}
           >
-            <p id="header">Spild ikke din elendighed</p>
-            <TradingViewWidget />
+            <div>
+              <b className="header">afledninger</b>
+              <div>
+                <a href="https://www.reddit.com">reddit</a>
+                <a href="https://www.4chan.org/wg/">/wg/</a>
+                <a href="https://www.youtube.com">youtube</a>
+                <a href="https://www.netflix.com">netflix</a>
+              </div>
+            </div>
+
+            <div>
+              <b className="header">skole</b>
+              <div>
+                <a href="https://www.gitlab.com">gitlab</a>
+                <a href="https://outlook.office.com/mail/?realm=uwo.ca&login_hint=nsegleni@uwo.ca">outlook</a>
+                <a href="https://westernu.brightspace.com/d2l/home">brightspace</a> 
+                <a href="https://www.gradescope.ca/">gradescope</a>
+              </div>
+            </div>
+
+            <div>
+              <b className="header">dev</b>
+              <div>
+                <a href="https://github.com/Calefy-Inc">github/calefy</a>
+                <a href="https://github.com/NicolasSegl">github/NicolasSegl</a>
+              </div>
+            </div>
+
+            <div>
+              <b className="header">blandet</b>
+              <div>
+                <a href="https://mail.google.com/mail/u/0/#inbox">gmail</a>
+                <a href="https://drive.google.com/drive/u/0/">gdrive</a>
+              </div>
+            </div>
           </div>
         </div>
       </header>

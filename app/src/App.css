@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'plex';
+  src: url('../public/plex.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
+  font-family: 'plex';
 }
 
 .App-header {
@@ -10,23 +18,23 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #FFE1AF;
+  color: #B77466;
 }
 
 #main {
   /* background-color: #957C62; */
   border: 2px solid #B77466;
-  min-width: 800px;
+  min-width: 1000px;
   font-size: 24px;
 }
 
-#header {
-  /* background-color: #957C62;
-  color: #FFFFFF;
-  padding: 10px;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  margin: 0; */
+a {
+  text-decoration: none;
+  color: #758A93;
+  margin: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+  padding: 20px;
 }
